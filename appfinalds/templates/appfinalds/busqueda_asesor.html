@@ -1,0 +1,48 @@
+{% extends 'appfinalds/index.html' %}
+
+{% block titulo %} Pagina de Calidad | Asesores {% endblock titulo %}
+
+{% block header %} 
+<header class="bg-dark py-5"> 
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center my-10">
+                    <h1 class="display-10 fw-bolder mb-2" style="color: #6891ff;">Panel de Asesores</h1>
+                    <p class="lead text-white-50 mb-4">Busqueda de Asesores</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+
+{% block ingresos %} 
+<section class="bg-light py-1 border-bottom">
+    <div class="container px-1 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Ingrese el id de asesor a buscar</h2>
+        </div> 
+        <div class="row gx-5 justify-content-center">
+            <!-- Buscar asesores-->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <form action='find_asesores/' method = "GET">
+                            <div class="text-center mb-5">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" type="text" name="id_asesor" id="id_asesor" placeholder="Ingrese id de asesor..." data-sb-validations="required" data-sb-can-submit="no"/>
+                                    <label for="name">Id de asesor</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">Id de Asesor es requerido.</div>
+                                </div>
+                            </div>
+                            <div class="d-grid"><input class="btn btn-primary" type="submit" value="Click para buscar"></div><p></p>
+                            <div class="d-grid"><a class="btn btn-outline-primary" href="{% url 'asesores' %}">Volver</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  
+{% endblock ingresos %} 

@@ -1,0 +1,26 @@
+{% extends 'appfinalds/index.html' %}
+
+{% block titulo %} Modulo Calidad - Editar perfil {% endblock titulo %}
+
+{% block header %} 
+<header class="bg-dark py-2">
+    <div class="container px-2">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h1 class="display-10 fw-bolder text-white mb-2">Datos actualizados de manera correcta</h1>
+                    <p class="lead text-white-50 mb-4">Si desea volver a actualizar los datos, haga click en Volver.</p>
+                    <p class="lead text-white-50 mb-4">Si desea cambiar la contraseña, haga click en Cambiar Contraseña.</p>
+                    <p class="lead text-white-50 mb-4">O si desea volver al inicio, haga click en Inicio.</p>
+                </div>
+                <div class="text-center my-5">
+                    <a class="btn btn-primary btn-lg" href="{% url 'editar_perfil' %}">Volver</a>
+                    <a class="btn btn-primary btn-lg" href="{% url 'cambiar_pass' %}">Cambiar Contraseña</a>
+                    <a class="btn btn-primary btn-lg" href="{% url 'inicio' %}">Inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+

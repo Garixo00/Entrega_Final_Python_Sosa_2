@@ -1,0 +1,55 @@
+{% extends 'appfinalds/index.html' %}
+
+{% block titulo %} Modulo Calidad | Inicio {% endblock titulo %}
+
+{% block header %} 
+<header class="bg-dark py-2">
+    <div class="container px-2">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h1 class="display-10 fw-bolder text-white-50 mb-2">{{mensaje}}</h1>
+                    <h1 class="display-10 fw-bolder text-white mb-2">Modulo para seguimiento de evaluaciones a asesores</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+
+{% block accesosseccion %}
+<!-- Features section-->
+<section class="py-5 border-bottom" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                <h2 class="h4 fw-bolder">Asesores</h2>
+                <p>Dentro de esta seccion puede dar de alta asesores y buscar a los mismos por el codigo de asesor.</p>
+                <a class="text-decoration-none" href="{% url 'asesores' %}">
+                    Ir a Asesores
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                <h2 class="h4 fw-bolder">Evaluadores</h2>
+                <p>Dentro de esta seccion puede dar de alta evaluadores y buscar a los mismos por el codigo de evaluador.</p>
+                <a class="text-decoration-none" href="{% url 'evaluadores' %}">
+                    Ir a Evaluadores
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                <h2 class="h4 fw-bolder">Evaluaciones</h2>
+                <p>Dentro de esta seccion puede dar de alta evaluaciones desde la herramienta de Calidad, tambien se pueden buscar evaluaciones con el codigo del mismo.</p>
+                <a class="text-decoration-none" href="{% url 'evaluaciones' %}">
+                    Evaluaciones
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock accesosseccion %}

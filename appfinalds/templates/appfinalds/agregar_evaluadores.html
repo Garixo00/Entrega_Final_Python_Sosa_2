@@ -1,0 +1,55 @@
+{% extends 'appfinalds/index.html' %}
+
+{% block titulo %} Pagina de Calidad | Evaluadores {% endblock titulo %}
+
+{% block header %} 
+<header class="bg-dark py-2">
+    <div class="container px-2">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h1 class="display-10 fw-bolder mb-2" style="color: #00d437;">Panel de Evaluadores</h1>
+                    <p class="lead text-white-50 mb-4">Agregar Evaluadores</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %} 
+
+{% block ingresos %} 
+<section class="bg-light py-1">
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Ingresar los datos solicitados</h2>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-4">
+                <form id="/agregar_evaluadores/" method="POST">
+                    {% csrf_token %}
+                    <!-- Nombre input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" name="nombre" placeholder="Enter your name..." data-sb-validations="required" data-sb-can-submit="no"/>
+                        <label for="name">Nombre</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">Nombre es requerido.</div>
+                    </div>
+                    <!-- Apellido input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="lastname" type="text" name="apellido" placeholder="Enter your lastname..." data-sb-validations="required" />
+                        <label for="lastname">Apellido</label>
+                        <div class="invalid-feedback" data-sb-feedback="lastname:required">Apellido es requerido.</div>
+                    </div>
+                    <!-- Id Evaluador input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="id_evaluador" type="text" name="id_evaluador" placeholder="Enter your id..." data-sb-validations="required" />
+                        <label for="id_evaluador">Id Evaluador</label>
+                        <div class="invalid-feedback" data-sb-feedback="id_evaluador:required">Identificacor de Evaluador es requerido.</div>
+                    </div>
+                    <div class="d-grid"><input class="btn btn-primary" type="submit" value="Click para cargar"></div><p></p>
+                    <div class="d-grid"><a class="btn btn-outline-primary" href="{% url 'evaluadores' %}">Volver</a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock ingresos %} 

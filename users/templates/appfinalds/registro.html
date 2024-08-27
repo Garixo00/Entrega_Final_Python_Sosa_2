@@ -1,0 +1,70 @@
+{% extends 'appfinalds/index.html' %}
+
+{% block titulo %} Modulo Calidad - Registro {% endblock titulo %}
+
+{% block header %} 
+{% if msg_register == "Error en los datos ingresados" %}
+<header class="bg-dark py-2">
+    <div class="container px-2">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h1 class="display-10 fw-bolder text-white mb-2">Error! Datos incorrectos</h1>
+                    <h1 class="display-10 fw-bolder text-white-50 mb-2">{{msg_register}}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endif %}
+{% endblock header %}
+
+{% block ingresos %} 
+<section class="bg-light py-5">
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Crea tu cuenta</h2>
+            <p class="lead mb-0"></p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-3">
+                <form action="{% url 'register' %}" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    {% csrf_token %}
+                    <!-- Usuario input -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="id_username" type="text" name="username" placeholder="Ingrese usuario..." data-sb-validations="required">
+                        <label for="id_username">Usuario</label>
+                        <div class="invalid-feedback" data-sb-feedback="username:required">Usuario es requerido.</div>
+                    </div>
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                        <label for="email">Email address</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                    </div>
+                    <!-- Contraseña input -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="password1" type="password1" name="password1" placeholder="Ingrese contraseña..." data-sb-validations="required">
+                        <label for="password1">Contraseña</label>
+                        <div class="invalid-feedback" data-sb-feedback="password1:required">Contraseña es requerida.</div>
+                    </div>
+                    <!-- Repetir Contraseña input -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="password2" type="password2" name="password2" placeholder="Ingrese contraseña..." data-sb-validations="required">
+                        <label for="password2">Reingrese Contraseña</label>
+                        <div class="invalid-feedback" data-sb-feedback="password2:required">Contraseña es requerida.</div>
+                    </div>
+                    <!-- Botón Submit -->
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock ingresos %} 
+
+
+ 

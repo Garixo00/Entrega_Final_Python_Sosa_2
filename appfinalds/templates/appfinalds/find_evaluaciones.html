@@ -1,0 +1,52 @@
+{% extends 'appfinalds/index.html' %}
+
+{% block titulo %} Pagina de Calidad | Evaluaciones {% endblock titulo %}
+
+{% block header %} 
+<header class="bg-dark py-5"> 
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center my-10">
+                    <h1 class="display-10 fw-bolder mb-2" style="color: #d49100;">Panel de Evaluaciones</h1>
+                    <p class="lead text-white-50 mb-4">Busqueda de Evaluaciones</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %} 
+
+{% block ingresos %}  
+<section class="bg-light py-1 border-bottom">
+    <div class="container px-1 my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bolder">Estamos buscando el id: {{id_evaluacion}}</h2>
+        </div> 
+        <div class="row gx-5 justify-content-center">
+            <!-- Informacion asesores -->
+            <div class="col-lg-6 col-xl-4">
+                <div class="card mb-5 mb-xl-0">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-5">
+                            {% if id_evaluadores %}
+                            <ul>
+                            {% for evaluador in nombres %}
+                                <li>
+                                    Id Evaluador: {{id_evaluador.id_evaluador}} | Id Asesor: {{id_evaluador.id_asesor}} | Id Evaluacion: {{id_evaluacion}} | Fecha Evaluacion: {{id_evaluador.fecha_evaluacion}}
+                                </li>
+                            {% endfor %}
+                            </ul>
+                            {% else %}
+                                <p class="lead mb-0">No se verifica evaluaciones con el id ingresado</p><p></p>
+                            {%endif%}
+                        <div class="d-grid"><a class="btn btn-outline-primary" href="{% url 'busqueda_evaluacion' %}">Volver</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>  
+{% endblock ingresos %} 

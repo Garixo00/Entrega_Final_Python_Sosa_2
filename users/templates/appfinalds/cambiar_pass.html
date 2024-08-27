@@ -1,0 +1,58 @@
+{% extends 'appfinalds/index.html' %}
+
+{% block titulo %} Modulo Calidad - Cambiar Contraseña {% endblock titulo %}
+
+{% block header %} 
+<header class="bg-dark py-2">
+    <div class="container px-2">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center my-5">
+                    <h1 class="display-10 fw-bolder text-white mb-4">Cambio de contraseña</h1>
+                    <p class="lead text-white-50 mb-2">Su contraseña no puede ser demasiado similar a su otra información personal.</p>
+                    <p class="lead text-white-50 mb-2">Su contraseña debe contener al menos 8 caracteres.</p>
+                    <p class="lead text-white-50 mb-2">Su contraseña no puede ser una contraseña de uso común.</p>
+                    <p class="lead text-white-50 mb-2">Su contraseña no puede ser completamente numérica.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %}
+
+{% block ingresos %} 
+<section class="bg-light py-3">
+    <div class="container px-1 my-1 px-1">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-3">
+                <form action="{% url 'cambiar_pass' %}" method="POST" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    {% csrf_token %}
+                    <!-- Contraseña actual input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="id_old_password" type="password" name="old_password" placeholder="Ingrese contraseña..." data-sb-validations="required">
+                        <label for="id_old_password">Contraseña</label>
+                        <div class="invalid-feedback" data-sb-feedback="id_old_password:required">Contraseña es requerida.</div>
+                    </div> 
+                    <!-- Contraseña input -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="id_new_password1" type="password" name="new_password1" placeholder="Ingrese contraseña..." data-sb-validations="required">
+                        <label for="id_new_password1">Nueva Contraseña</label>
+                        <div class="invalid-feedback" data-sb-feedback="id_new_password1:required">Contraseña es requerida.</div>
+                    </div>
+                    <!-- Repetir Contraseña input -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="id_new_password2" type="password" name="new_password2" placeholder="Reingrese contraseña..." data-sb-validations="required">
+                        <label for="id_new_password2">Reingrese Contraseña</label>
+                        <div class="invalid-feedback" data-sb-feedback="id_new_password2:required">Contraseña es requerida.</div>
+                    </div>
+                    <!-- Botón Submit -->
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Cambiar</button>
+                    </div>
+                </form><p></p>
+                <div class="d-grid"><a class="btn btn-outline-primary" href="{% url 'editar_perfil' %}">Volver</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock ingresos %}

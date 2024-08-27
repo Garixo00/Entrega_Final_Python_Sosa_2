@@ -1,0 +1,39 @@
+{% extends 'appfinalds/index.html' %}
+
+{% block titulo %} Pagina de Calidad | Asesores {% endblock titulo %}
+
+{% block header %} 
+<header class="bg-dark py-2">
+    <div class="container px-2">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h1 class="display-10 fw-bolder mb-2" style="color: #6891ff;">Panel de Asesores</h1>
+                    <p class="lead text-white-50 mb-4">Agregar Asesores</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock header %} 
+
+{% block ingresos %}  
+<section class="bg-light py-1 border-bottom">
+    <div class="container px-1 my-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">Asesor registrado de manera correcta</h2>
+            </div>
+            <!-- Volver-->
+                <div class="col-lg-6 col-xl-4">
+                        <div class="card mb-5 mb-xl-0">
+                            <div class="card-body p-5">
+                                <div class="d-grid"><a class="btn btn-outline-primary" href="{% url 'asesores' %}">Click para Volver a Asesores</a></div>
+                            </div>
+                        </div>
+                </div>
+        </div>
+    </div>
+</section>
+{% endblock ingresos %} 
+
